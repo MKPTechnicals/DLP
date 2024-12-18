@@ -1,3 +1,5 @@
+// Code to accept a*abb string
+
 #include <stdio.h>
 #include <string.h>
 
