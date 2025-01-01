@@ -15,8 +15,6 @@ input_string = input("Enter the input string: ")
 
 current_state = in_state
 
-print(transitions)
-
 for symbol in input_string:
     if symbol not in input_symbols:
         print(f"Symbol '{symbol}' not in the input alphabet.")
