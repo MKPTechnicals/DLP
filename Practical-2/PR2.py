@@ -2,14 +2,15 @@ no_input_symbols = int(input("Enter number of Input Symbols: "))
 input_symbols = input("Enter Input Symbols: ").split(" ")
 no_states = int(input("Enter number of states: "))
 in_state = int(input("Enter Initial state: "))
-fin_state = input("Enter Final state: ")
+fin_state = input("Enter Final states: ").split(" ")
 fin_state = [int(x) for x in fin_state]
 transitions = {}
+
 for state in range(no_states):
-    transitions[state+1] = {}
+    transitions[state + 1] = {}
     for symbol in input_symbols:
-        next_state = int(input(f"{state+1},'{symbol}'-> "))
-        transitions[state+1][symbol] = next_state
+        next_state = int(input(f"{state + 1}, '{symbol}' -> "))
+        transitions[state + 1][symbol] = next_state
 
 input_string = input("Enter the input string: ")
 
