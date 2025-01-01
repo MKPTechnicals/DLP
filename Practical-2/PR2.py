@@ -6,21 +6,23 @@ fin_state = input("Enter Final state: ")
 fin_state = [int(x) for x in fin_state]
 transitions = {}
 for state in range(no_states):
-    transitions[state] = {}
+    transitions[state+1] = {}
     for symbol in input_symbols:
-        next_state = int(input(f"Enter the next state for state {state} on input symbol '{symbol}': "))
-        transitions[state][symbol] = next_state
+        next_state = int(input(f"{state+1},'{symbol}'-> "))
+        transitions[state+1][symbol] = next_state
 
 input_string = input("Enter the input string: ")
 
 current_state = in_state
 
+print(transitions)
+
 for symbol in input_string:
     if symbol not in input_symbols:
-        print(f"Error: Symbol '{symbol}' not in the input alphabet.")
+        print(f"Symbol '{symbol}' not in the input alphabet.")
         break
     if current_state not in transitions or symbol not in transitions[current_state]:
-        print(f"Error: No transition for state {current_state} on symbol '{symbol}'.")
+        print(f"No transition for state {current_state} on symbol '{symbol}'.")
         break
     current_state = transitions[current_state][symbol]
 
