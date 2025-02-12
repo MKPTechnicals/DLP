@@ -15,12 +15,12 @@
     for(i = 0; yytext[i] != '*'; i++) {
         num1 = num1 * 10 + (yytext[i] - '0');
     }
-    i++; 
+    i++;
     for(; i < strlen(yytext); i++) {
         num2 = num2 * 10 + (yytext[i] - '0');
     }
     printf("%d\n", num1 * num2);
-}
+}  
 [^0-9] ;
 %%
 #include <stdio.h>
