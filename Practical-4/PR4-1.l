@@ -1,9 +1,3 @@
-%{
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-%}
-
 %%
 [0-9]+ {printf("%s\n", yytext);} 
 [0-9]+\\[0-9] {
@@ -14,7 +8,7 @@
         result *= base;
     }
     printf("%d\n", result);
-} 
+}  
 [0-9]+\*[0-9]+ {
     int i;
     int num1 = 0, num2 = 0;
@@ -26,9 +20,12 @@
         num2 = num2 * 10 + (yytext[i] - '0');
     }
     printf("%d\n", num1 * num2);
-} 
-[^0-9] ;  
+}
+[^0-9] ;
 %%
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int yywrap(void) {
     return 1;
