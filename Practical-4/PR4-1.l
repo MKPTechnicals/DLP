@@ -6,7 +6,7 @@
 
 %%
 [0-9]+ { printf("%s\n", yytext); }
-[0-9]+ "**" [0-9]+ { 
+[0-9]+"**"[0-9]+ { 
     int base = atoi(yytext); 
     while (*yytext != '\0') yytext++; 
     yytext += 2; 
@@ -14,7 +14,7 @@
     int result = (int)pow(base, exponent); 
     printf("%d\n", result); 
 }
-[0-9]+ "*" [0-9]+ {
+[0-9]+"*"[0-9]+ {
     int operand1 = atoi(yytext); 
     while (*yytext != '\0') yytext++; 
     yytext++; 
@@ -22,7 +22,7 @@
     int result = operand1 * operand2; 
     printf("%d\n", result); 
 }
-. ;
+.|\n {}
 %%
 
 int yywrap(void) {
