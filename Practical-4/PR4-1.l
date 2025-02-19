@@ -1,6 +1,6 @@
 %%
 [0-9]+ {printf("%s\n", yytext);} 
-[0-9]+\\[0-9] {
+[0-9]+\*\*[0-9] {
     int base = atoi(yytext);
     int exp = yytext[strlen(yytext)-1] - '0';
     int result = 1;
