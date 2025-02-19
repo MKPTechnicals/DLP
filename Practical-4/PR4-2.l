@@ -1,7 +1,9 @@
 %%
 charusat { printf("university"); }
-[^(\n)(charusat)]+  { printf("%s", yytext); }
-\n         { printf("\n"); }
+CHARUSAT { printf("UNIVERSITY"); }
+Charsuat { printf("University"); }
+\n	{ printf("\n"); }
+. 	{ printf("%s", yytext); }
 %%
 
 int yywrap(void) {
