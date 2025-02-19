@@ -21,7 +21,7 @@ void validate_password() {
 [0-9]       { digit++; length++; }
 [*,;#$@]     { symbol++; length++; }
 \n          { validate_password(); }
-.           { length++; } 
+.           { printf("Invalid password\n"); return 0;} 
 
 %%
 
