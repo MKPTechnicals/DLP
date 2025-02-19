@@ -5,7 +5,7 @@
 %%
 "charusat" { printf("university"); }
 [^\n]+     { printf("%s", yytext); }
-\n         { printf("\n"); return 0; }
+\n         { printf("\n"); }
 %%
 
 int yywrap(void) {
