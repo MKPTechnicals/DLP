@@ -17,6 +17,8 @@ int is_keyword(char *str) {
 void lexical_error(const char *msg) {
     printf("Lexical Error: %s\n", msg);
 }
+
+FILE *yyin;
 %}
 %%
 "/*"[^*]*"*"+([^*/][^*]*"*"+)*"/"    { }
@@ -39,7 +41,6 @@ void lexical_error(const char *msg) {
 .                                   { lexical_error("Invalid character encountered"); }
 %%
 int main() {
-    extern FILE *yyin;
     yyin = fopen("a.c", "r");
     if (!yyin) {
         printf("Could not open File.c\n");
