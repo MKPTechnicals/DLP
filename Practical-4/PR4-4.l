@@ -19,7 +19,7 @@ void validate_password() {
 [a-z]       { lower++; length++; }
 [A-Z]       { upper++; length++; }
 [0-9]       { digit++; length++; }
-[*;#$@]     { symbol++; length++; }
+[*,;#$@]     { symbol++; length++; }
 \n          { validate_password(); }
 .           { length++; } 
 
