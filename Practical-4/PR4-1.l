@@ -1,6 +1,6 @@
 %%
 [0-9]+ {printf("%s\n", yytext);} 
-[0-9]+\*\*[0-9] {
+[0-9 ]+\*\*[ ]*[0-9] {
     int base = atoi(yytext);
     int exp = yytext[strlen(yytext)-1] - '0';
     int result = 1;
@@ -9,7 +9,7 @@
     }
     printf("%d\n", result);
 }  
-[0-9]+\*[0-9]+ {
+[0-9 ]+\*[ ]*[0-9]+ {
     int i;
     int num1 = 0, num2 = 0;
     for(i = 0; yytext[i] != '*'; i++) {
