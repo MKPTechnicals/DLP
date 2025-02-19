@@ -1,6 +1,6 @@
 %%
-"charusat" { printf("university"); }
-[^(\n)("charusat")]+  { printf("%s", yytext); }
+charusat { printf("university"); }
+[^(\n)(charusat)]+  { printf("%s", yytext); }
 \n         { printf("\n"); }
 %%
 
