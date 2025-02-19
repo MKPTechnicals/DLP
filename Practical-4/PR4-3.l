@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+FILE *yyin;
+
 int char_count = 0;
 int word_count = 0;
 int line_count = 0;
@@ -28,18 +30,18 @@ int yywrap(void) {
 }
 
 int main() {
-    extern FILE *yyin;
 
     yyin = fopen("Input.txt", "r");
 
     yylex();
-    fclose(yyin);
+    
 
     printf("Characters: %d\n", char_count);
     printf("Words: %d\n", word_count);
     printf("Lines: %d\n", line_count);
     printf("Whitespaces: %d\n", space_count);
     printf("Tabs: %d\n", tab_count);
+    fclose(yyin);
 
     return 0;
 }
