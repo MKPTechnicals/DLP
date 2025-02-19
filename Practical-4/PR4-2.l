@@ -1,10 +1,6 @@
-%{
-#include <stdio.h>
-%}
-
 %%
 "charusat" { printf("university"); }
-[^\n]+     { printf("%s", yytext); }
+[^(\n)("charusat")]+  { printf("%s", yytext); }
 \n         { printf("\n"); }
 %%
 
