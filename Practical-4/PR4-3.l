@@ -20,6 +20,7 @@ int tab_count = 0;
 [^a-zA-Z \t\n]+ { 
             char_count += yyleng;
         }
+<<EOF>>	{ line_count++; return 0;}
 %%
 
 int yywrap(void) {
