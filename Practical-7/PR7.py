@@ -45,6 +45,7 @@ def compute_first_follow(grammar):
     for symbol in grammar:
         compute_follow(symbol)
     return first, follow
+
 grammar = {
     'S': ['ABC', 'D'],
     'A': ['a', 'ε'],
@@ -52,6 +53,13 @@ grammar = {
     'C': ['(S)', 'c'],
     'D': ['AC']
 }
+
+# grammar = {
+#     'S': ['aBC', 'bC', 'cC', '(S)C'],
+#     'B': ['b'],
+#     'C': ['(S)', 'c']
+# }
+
 first, follow = compute_first_follow(grammar)
 print("First(S) =", first['S'])
 print("First(A) =", first['A'])
